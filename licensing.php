@@ -32,16 +32,6 @@ include 'page_fragments/main_head.php';?>
 			use as a favicon are entirely my own, and may be freely used with credit 
 			to the original creators.
 		</p>
-		
-		<p>
-			Note that if source code is not available yet, the site is not fully 
-			complete, and it will be committed to a repo once I feel comfortable 
-			publishing the website as a full domain. If you stumble upon this 
-			site in the meantime, or I somehow forgot to put the code on a repo 
-			once I published the site fully, and you want a copy of the code, please contact 
-			me and I can get you one. I know this is an imperfect solution, however, 
-			I need to get the site set up for that first.
-		</p>
 	</main>
 </body>
 </html>
