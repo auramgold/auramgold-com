@@ -6,7 +6,7 @@ $page = max(is_numeric($_GET['page'] ?? NULL) ? (int)$_GET['page'] : 1, 1);
 $offset = 20 * ($page - 1);
 $PAGE_ID = "SERIES";
 $PAGE_TITLE = "Series Index";
-$PAGE_DESCRIPTION = "All the story series on auramgold";
+$PAGE_DESCRIPTION = "All the story series on auramgold.com";
 $PAGE_STYLES = ['stories'];
 
 $series_data = array();

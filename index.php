@@ -1,7 +1,7 @@
 <?php
 $PAGE_ID = "INDEX";
 $PAGE_TITLE = "Main Page";
-$PAGE_DESCRIPTION = "The landing page for Auramgold";
+$PAGE_DESCRIPTION = "The landing page for auramgold.com";
 include 'page_fragments/main_head.php';?>
 <body>
 	<?php include 'page_fragments/main_header.php';?>

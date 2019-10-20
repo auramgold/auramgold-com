@@ -20,11 +20,33 @@ if($allowable)
 if(!$allowable)
 {
 	echo "<meta http-equiv=\"refresh\" content=\"0;URL='/stories'\" />";
+	die;
 }
+
+$tagquer = database\inst()->prepare('SELECT * '
+	. 'FROM `story_tags` JOIN `tags` '
+	. 'ON (`story_tags`.`tag_id` = `tags`.`tag_id`) '
+	. 'WHERE `story_tags`.`story_id`=?');
+$tagquer->bind_param("s", $id);
+$tagquer->execute();
+$tagresu = $tagquer->get_result();
+$tagcomma = false;
+$tags = '';
+$tagquer->close();
+
+while($row = $tagresu->fetch_assoc())
+{
+	if(!$comma){$comma = true;}
+	else{		$tags .= ', ';}
+	$tags .= $row['name'];
+}
+if(!$comma){$tags = NULL;}
+
 $PAGE_ID = "STORY/$id";
 $PAGE_TITLE = $data['title'];
 $PAGE_DESCRIPTION = $data['description'];
 $PAGE_STYLES = ['stories'];
+$PAGE_EXT_KEYWORDS = $tags??'';
 include 'page_fragments/main_head.php';?>
 <body>
 	<?php include 'page_fragments/main_header.php';?>
@@ -84,29 +106,7 @@ include 'page_fragments/main_head.php';?>
 			<section class='story-description'><?=$data['description'];?></section>
 			<section class='story-extra-info'>
 				<section>
-					Tags: <?php
-	$prepquer = database\inst()->prepare('SELECT * '
-			. 'FROM `story_tags` JOIN `tags` '
-				. 'ON (`story_tags`.`tag_id` = `tags`.`tag_id`) '
-			. 'WHERE `story_tags`.`story_id`=?');
-	$prepquer->bind_param("s", $id);
-	$prepquer->execute();
-	$resu = $prepquer->get_result();
-	$comma = false;
-	while($row = $resu->fetch_assoc())
-	{
-		if(!$comma)
-		{
-			$comma = true;
-		}
-		else
-		{
-			echo ', ';
-		}
-		echo $row['name'];
-	}
-	if(!$comma){ echo 'None.'; }
-					?>
+					Tags: <?=$tags??'None.';?>
 				</section>
 				<section>
 					Modified: <?= \story\iso8601((int)$data['modified_time']);?>

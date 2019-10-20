@@ -1,7 +1,7 @@
 <?php
 $PAGE_ID = "LICENSING";
 $PAGE_TITLE = "Licence Details";
-$PAGE_DESCRIPTION = "Licence details about the content on Auramgold";
+$PAGE_DESCRIPTION = "Licence details about the content on auramgold.com";
 include 'page_fragments/main_head.php';?>
 <body>
 	<?php include 'page_fragments/main_header.php';?>
