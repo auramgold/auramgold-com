@@ -1,0 +1,216 @@
+html {
+	box-sizing: border-box;
+}
+
+header, main, article, section, footer, nav {
+	display: block;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+a:not(.no-display) {
+	color: #776508;
+}
+
+a:not(.no-display):visited {
+	color: #302803;
+}
+
+a.no-display {
+	text-decoration: none;
+	color: inherit;
+}
+
+hr {
+	width: 100%;
+}
+
+body {
+	width: 100%;
+	line-height: 1.5em;
+	color: black;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0;
+	margin-bottom: -1px;
+	padding: 0;
+	font-family: "Segoe UI", Arial, sans-serif;
+	height: 100vh;
+	background-color: #eeeeee;
+	background: linear-gradient(#eeeeee 30%,#f8f8f8 50%, #ffffff 90%);
+	background-repeat: no-repeat;
+}
+
+header#top{
+	width: 100%;
+	height: 8vh;
+	min-height: 100px;
+	padding: 5px 10px 1em;
+	background-color: #ffdd33;
+	background: linear-gradient(#ffdd33 35%,#fae266 60%, #eeeeee);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 0 0 auto;
+}
+
+#headerwrap{
+	max-width: 1600px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-grow: 1;
+}
+
+#toplogo {
+	font-size: 2rem;
+	font-weight: 700;
+}
+
+.handwriting {
+	font-family: "Segoe Script", "Courier New", Courier, monospace;
+}
+
+header nav {
+	display: flex;
+	height: 8vh;
+	min-height: 100px;
+	justify-content: space-around;
+	align-items: flex-start;
+	flex-grow: 1;
+}
+
+.nav-item {
+	font-weight: 700;
+	min-width: 8em;
+	display: block;
+	position: relative;
+	top: 0em;
+	text-align: center;
+	height: 80%;
+	cursor: pointer;
+	background: #ffdd33;
+	padding: 1em 2em 0.5em;
+	border-radius: 0 0 50% 50%;
+	transition: height, padding-top;
+	transition-duration: 0.5s;
+}
+
+.nav-item:hover {
+	transition: height, padding-top;
+	height: calc(80% + 1em);
+	padding-top: 2em;
+	transition-duration: 1s
+}
+
+main#body, article#body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 1vh;
+	max-width: 850px;
+	margin: 0 2em;
+	flex-grow: 1;
+}
+
+.main-border {
+	margin: 0.5em 0 1em;
+	border: 2px solid black;
+	padding: 0.5em 0.5em 0.25em;
+	border-radius: 20px;
+	border-bottom: none;
+}
+
+p {
+	width: 100%;
+	text-indent: 2em;
+}
+
+/*
+@media (min-width: 500px) and (max-width: 849px){
+	#toplogo {
+		font-size: 1rem;
+	}
+	
+	header#top{
+		height: 4vh;
+		min-height: 50px;
+	}
+	
+	nav {
+		height: 4vh;
+		min-height: 50px;
+		justify-content: space-around;
+		align-items: flex-start;
+		flex-grow: 1;
+	}
+	
+	.nav-item {
+		margin: 0 2px;
+		min-width: 4em;
+		height: 90%;
+		padding: 0.5em;
+	}
+	
+	.nav-item:hover {
+		height: calc(90% + 0.25em);
+		padding-top: 0.5em;
+		transition-duration: 1s
+	}
+	
+	main#body, article#body {
+		padding-top: 4px;
+		margin: 0 1em;
+	}
+	
+	article#body {
+		margin-top: 4px;
+	}
+}*/
+
+@media (max-width:849px) {
+	header#top{
+		margin:0;
+		width: 100%;
+		background: linear-gradient(#ffdd33 80%, #eeeeee);
+		height: 20vh;
+		min-height: 225px;
+	}
+	
+	#toplogo {
+		padding-bottom: 0.25em;
+	}
+	
+	#headerwrap {
+		flex-grow: 100;
+		margin: 0;
+		width: 100%;
+		flex-direction:column;
+		justify-content:flex-start;
+		height: 100%
+	}
+	
+	header nav {
+		width: 100%;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: flex-start;
+		
+		margin-bottom: 6%;
+	}
+	
+	.nav-item, .nav-item:hover{
+		margin: 0;
+		width: 100%;
+		min-height: 1.2em;
+		flex-grow: 1;
+		padding: 0.05em;
+		border-radius: 0;
+		border-top: 1px solid black;
+		transition-duration: 0s;
+		transition:none;
+	}
+}

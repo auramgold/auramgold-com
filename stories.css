@@ -1,0 +1,149 @@
+.story-heading {
+	display:flex;
+	flex-direction: column;
+	border: 2px solid black;
+	border-radius: 30px;
+	margin-bottom: 0.5em;
+}
+
+.story-heading:not(#main-story-heading) {
+	margin: 0 1em 0.5em;
+}
+
+header#main-story-heading {
+	width: 100%;
+}
+
+.story-heading > section:not(:first-child){
+	border-top: 1px solid black;
+}
+
+section.box-title {
+	margin-top:0;
+	padding-top: 0.25rem;
+	text-align: center;
+	display:block;
+	width:100%;
+	margin-bottom: 0.25em;
+	padding-bottom: 0.25em;
+}
+
+section.box-title > h1,h2,h3 {
+	display: inline;
+}
+
+.story-name {
+	font-size: 100%;
+}
+
+section.story-description {
+	flex-grow: 1;
+	padding: 0.25em;
+	text-align: center;
+	width:100%;
+	display: block;
+}
+
+section.story-info {
+	flex-grow: 1;
+	padding: 0.25em;
+	text-align: center;
+	width:100%;
+	display: block;
+}
+
+section.story-extra-info {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+}
+
+section.story-extra-info > section {
+	flex-grow: 1;
+	flex-shrink: 1;
+	padding: 4px;
+	text-align: center;
+}
+
+.pagenav {
+	justify-content: center;
+	font-size: 1.2em;
+	margin: 1em 0.5em;
+	height: 2em;
+	display: flex;
+	flex-direction: row;
+	flex-grow: 0;
+}
+
+.pagenav > a{
+	display: block;
+	height: 100%;
+	padding: 0.25em;
+}
+
+.pagenav > a:first-child:not(.pagenum) {
+	border-radius: 1em 0 0 1em;
+}
+
+.pagenav > a:last-child:not(.pagenum) {
+	border-radius: 0 1em 1em 0;
+}
+
+.pagenav > .pagenum {
+	height: 100%;
+	padding: 0.25em;
+}
+
+.pagenav > :not(:last-child) {
+	border-left: 1px solid black;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+.pagenav > :last-child {
+	border: 1px solid black;
+}
+
+.pagenav > a, .pagenav > .pagenum {
+	text-align: center;
+}
+
+
+@media (max-width:849px) {
+	.pagenav {
+		width: 100%;
+		font-size: 1.5em;
+	}
+	
+	.pagenav > a, .pagenav > .pagenum {
+		width: 33.333333333%;
+	}
+	
+	.pagenav > .pagenum {
+		flex-grow: 1;
+		max-width: 50%;
+	}
+	
+	
+}
+
+@media screen and (min-width: 500px) {
+	section.story-extra-info > section:not(:first-child) {
+		border-left: 1px solid black;
+	}
+}
+	
+@media screen and (max-width: 499px) {
+	section.story-extra-info {
+		flex-direction: column;
+	}
+	
+	section.story-extra-info > section:not(:first-child) {
+		padding: 2px;
+		border-top: 1px solid black;
+	}
+	
+	.story-heading:not(#main-story-heading) {
+		margin: 0 0 0.5em;
+	}
+}

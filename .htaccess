@@ -1,0 +1,16 @@
+DirectoryIndex index.php
+RewriteEngine on
+RewriteBase /
+
+RewriteRule stories/?$ stories.php?page=1 [L,QSA]
+RewriteRule stories/page/(\d+)/?$ stories.php?page=$1 [L,QSA]
+RewriteRule stories/story/[^/]+/([A-Za-z0-9]+)?.*$ story.php?id=$1 [L,QSA]
+RewriteRule authors/?$ authors.php [L,QSA]
+RewriteRule authors/(\d+)/?$ authors.php?page=$1 [L,QSA]
+RewriteRule authors/author/[^/]+/([A-Za-z0-9]+)/?$ author.php?id=$1&page=1 [L,QSA]
+RewriteRule authors/author/[^/]+/([A-Za-z0-9]+)/page/(\d+)/?$ author.php?id=$1&page=$2
+RewriteRule series/?$ series_main.php [L,QSA]
+RewriteRule series/page/(\d+)/?$ series_main.php?page=$1 [L,QSA]
+RewriteRule series/series/[^/]+/([A-Za-z0-9]+)/?$ series.php?id=$1&page=1 [L,QSA]
+RewriteRule series/series/[^/]+/([A-Za-z0-9]+)/page/(\d+)/?$ series.php?id=$1&page=$2
+RewriteRule licensing/?$ licensing.php [L,QSA]
