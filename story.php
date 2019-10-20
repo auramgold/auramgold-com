@@ -42,8 +42,12 @@ while($row = $tagresu->fetch_assoc())
 }
 if(!$comma){$tags = NULL;}
 
+$authorresp = database\inst()->query("SELECT `name` FROM `authors` "
+		. "WHERE `author_id` = '{$data['author_id']}'");
+$authordata = $authorresp->fetch_assoc();
+
 $PAGE_ID = "STORY/$id";
-$PAGE_TITLE = $data['title'];
+$PAGE_TITLE = $data['title']." by $authordata[name]";
 $PAGE_DESCRIPTION = $data['description'];
 $PAGE_STYLES = ['stories'];
 $PAGE_EXT_KEYWORDS = $tags??'';
@@ -90,12 +94,7 @@ include 'page_fragments/main_head.php';?>
 	}
 		?>
 		<header id="main-story-heading" class='story-heading'>
-			<section class="box-title"><?php
-	$authorresp = database\inst()->query("SELECT `name` FROM `authors` "
-			. "WHERE `author_id` = '{$data['author_id']}'");
-	$authordata = $authorresp->fetch_assoc();
-			
-			?>
+			<section class="box-title">
 				<h1><?=$data['title'];?></h1>
 			</section>
 			<section class='story-info'>
