@@ -27,6 +27,10 @@ hr {
 	width: 100%;
 }
 
+label {
+	display: block;
+}
+
 body {
 	width: 100%;
 	line-height: 1.5em;
@@ -39,9 +43,9 @@ body {
 	padding: 0;
 	font-family: "Segoe UI", Arial, sans-serif;
 	height: 100vh;
-	background-color: #eeeeee;
 	background: linear-gradient(#eeeeee 30%,#f8f8f8 50%, #ffffff 90%);
 	background-repeat: no-repeat;
+	background-color: #ffffff;
 }
 
 header#top{
@@ -85,7 +89,7 @@ header nav {
 
 .nav-item {
 	font-weight: 700;
-	min-width: 8em;
+	min-width: 6.5em;
 	display: block;
 	position: relative;
 	top: 0em;
@@ -93,7 +97,7 @@ header nav {
 	height: 80%;
 	cursor: pointer;
 	background: #ffdd33;
-	padding: 1em 2em 0.5em;
+	padding: 1em 1.5em 0.5em;
 	border-radius: 0 0 50% 50%;
 	transition: height, padding-top;
 	transition-duration: 0.5s;
@@ -114,6 +118,8 @@ main#body, article#body {
 	max-width: 850px;
 	margin: 0 2em;
 	flex-grow: 1;
+	flex-shrink:0;
+	flex-basis: content;
 }
 
 .main-border {
@@ -129,59 +135,19 @@ p {
 	text-indent: 2em;
 }
 
-/*
-@media (min-width: 500px) and (max-width: 849px){
-	#toplogo {
-		font-size: 1rem;
-	}
-	
-	header#top{
-		height: 4vh;
-		min-height: 50px;
-	}
-	
-	nav {
-		height: 4vh;
-		min-height: 50px;
-		justify-content: space-around;
-		align-items: flex-start;
-		flex-grow: 1;
-	}
-	
-	.nav-item {
-		margin: 0 2px;
-		min-width: 4em;
-		height: 90%;
-		padding: 0.5em;
-	}
-	
-	.nav-item:hover {
-		height: calc(90% + 0.25em);
-		padding-top: 0.5em;
-		transition-duration: 1s
-	}
-	
-	main#body, article#body {
-		padding-top: 4px;
-		margin: 0 1em;
-	}
-	
-	article#body {
-		margin-top: 4px;
-	}
-}*/
-
 @media (max-width:849px) {
 	header#top{
 		margin:0;
 		width: 100%;
 		background: linear-gradient(#ffdd33 80%, #eeeeee);
-		height: 20vh;
+		height: 20em;
 		min-height: 225px;
+		justify-content: flex-start;
 	}
 	
 	#toplogo {
 		padding-bottom: 0.25em;
+		font-size: 1em;
 	}
 	
 	#headerwrap {
@@ -190,7 +156,7 @@ p {
 		width: 100%;
 		flex-direction:column;
 		justify-content:flex-start;
-		height: 100%
+		height: 80%
 	}
 	
 	header nav {
@@ -205,7 +171,7 @@ p {
 	.nav-item, .nav-item:hover{
 		margin: 0;
 		width: 100%;
-		min-height: 1.2em;
+		min-height: 1.1em;
 		flex-grow: 1;
 		padding: 0.05em;
 		border-radius: 0;

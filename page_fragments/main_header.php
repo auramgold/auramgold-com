@@ -12,6 +12,7 @@ if(!isset($PAGE_ID))
 				<a class="nav-item no-display" href="/stories">Stories</a>
 				<a class='nav-item no-display' href='/authors'>Authors</a>
 				<a class='nav-item no-display' href='/series'>Series</a>
+				<a class='nav-item no-display' href='/settings'>Settings</a>
 				<a class="nav-item no-display" href="/licensing">Licensing</a>
 			</nav>
 		</div>

@@ -12,5 +12,6 @@ RewriteRule authors/author/[^/]+/([A-Za-z0-9]+)/page/(\d+)/?$ author.php?id=$1&p
 RewriteRule series/?$ series_main.php [L,QSA]
 RewriteRule series/page/(\d+)/?$ series_main.php?page=$1 [L,QSA]
 RewriteRule series/series/[^/]+/([A-Za-z0-9]+)/?$ series.php?id=$1&page=1 [L,QSA]
-RewriteRule series/series/[^/]+/([A-Za-z0-9]+)/page/(\d+)/?$ series.php?id=$1&page=$2
+RewriteRule series/series/[^/]+/([A-Za-z0-9]+)/page/(\d+)/?$ series.php?id=$1&page=$2 [L,QSA]
+RewriteRule settings/?$ settings.php [L,QSA]
 RewriteRule licensing/?$ licensing.php [L,QSA]

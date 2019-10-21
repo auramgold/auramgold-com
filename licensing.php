@@ -9,7 +9,8 @@ include 'page_fragments/main_head.php';?>
 		<h1 class="handwriting">Licensing</h1>
 		<p>
 			The code of this website is licensed under 
-			<a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GNU General Public License 3.0</a>, 
+			<a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GNU General Public License 3.0</a>
+			 (<a href='https://github.com/auramgold/auramgold-com'>source code accessible here</a>), 
 			and the content within it is licensed under 
 			<a href="https://creativecommons.org/licenses/by-sa/4.0/">
 				Creative Commons Attribution-ShareAlike 4.0 International

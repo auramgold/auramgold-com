@@ -138,13 +138,15 @@ include 'page_fragments/main_head.php';?>
 			</section>
 		</header>
 		<br/>
+		<div>
 		<?php include "story_files/{$data['location']}";
+		
 		if(!is_null($data['series_id']))
 		{
 			story\pagenav($seriesname, $prevurl, $nexturl, $prevname, $nextname, $seriesurl);
 		}
 		?>
-		
+		</div>
 		<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
 			<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
 		</a>

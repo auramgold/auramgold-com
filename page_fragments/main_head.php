@@ -3,10 +3,20 @@ if(!isset($PAGE_TITLE)||!isset($PAGE_ID))
 {
 	throw new Exception("Client page attempted to be loaded without title or ID");
 }
+if(!isset($PAGE_STYLES))
+{
+	$PAGE_STYLES = array();
+}
+$style = $_COOKIE['style'] ?? 'light';
+if($style != 'light')
+{
+	$PAGE_STYLES[] = $style;
+}
 ?><!DOCTYPE html>
 <html lang="en-US">
 <head>
 	<title><?=$PAGE_TITLE;?> - auramgold.com</title>
+	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
 	<meta name="author" content="Lauren (auramgold)"/>
 	<meta name="description" content="<?=$PAGE_DESCRIPTION??'An auramgold.com page.';?>"/>
@@ -16,7 +26,7 @@ if(!isset($PAGE_TITLE)||!isset($PAGE_ID))
 	if(isset($PAGE_STYLES)):
 		foreach($PAGE_STYLES as $sheet):
 	?>
-	<link rel="stylesheet" type="text/css" href="/<?="$sheet.css?m=".filemtime($sheet.'.css');?>"<?php
+	<link rel="stylesheet" type="text/css" href="/<?="$sheet.css?m=".filemtime($sheet.'.css');?>"><?php
 		endforeach;
 	endif;?>
 </head>
