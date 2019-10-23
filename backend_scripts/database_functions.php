@@ -19,9 +19,9 @@ function generateID(): string
 function &inst(): \mysqli
 {
 	global $view_database_reference;
-	$credentials = explode(',',file_get_contents('database_credentials.txt',true));
 	if(is_null($view_database_reference))
 	{
+		$credentials = explode(',',file_get_contents('database_credentials.txt',true));
 		$view_database_reference = new \mysqli("auramgold.db", $credentials[0],
 		$credentials[1], "auramgold_stories");
 	}
