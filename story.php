@@ -105,7 +105,7 @@ include 'page_fragments/main_head.php';?>
 			<section class='story-description'><?=$data['description'];?></section>
 			<section class='story-extra-info'>
 				<section>
-					Tags: <?=$tags??'None.';?>
+					Tags: <?=$tags??'None';?>
 				</section>
 				<section>
 					Modified: <?= \story\iso8601((int)$data['modified_time']);?>
@@ -132,7 +132,7 @@ include 'page_fragments/main_head.php';?>
 		}
 		echo $row['name'];
 	}
-	if(!$comma){ echo 'None.'; }
+	if(!$comma){ echo 'None'; }
 					?>
 				</section>
 			</section>

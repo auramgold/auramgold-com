@@ -27,7 +27,7 @@ function storybox(string $id, string $title,string $aname,string $author_id, str
 	{
 		echo implode(', ',$tags);
 	}
-	else{ echo 'None.'; }
+	else{ echo 'None'; }
 					?>
 	</section>
 	<section>
@@ -39,7 +39,7 @@ function storybox(string $id, string $title,string $aname,string $author_id, str
 	{
 		echo implode(', ',$cws);
 	}
-	else{ echo 'None.'; }
+	else{ echo 'None'; }
 					?>
 		</section>
 	</section>
