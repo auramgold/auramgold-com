@@ -32,18 +32,12 @@ include 'page_fragments/main_head.php';?>
 	$seriesquer = "SELECT *,(`parent_id` IS NULL) AS toplevel, COUNT(`name`) AS count FROM `series`"
 			. " WHERE 1 ORDER BY toplevel DESC, `name` ASC LIMIT 20 OFFSET $offset";
 	$seriesresu = database\inst()->query($seriesquer);
-	$seriescount = 0;
 	while($row = $seriesresu->fetch_assoc()):
 		$curr_id = $row['series_id'];
 		$parent_id = $row['parent_id'];
 		$name = $row['name'];
 		$urlname = util\htmltourl($name);
 		$desc = $row['description'];
-		
-		if($seriescount == 0)
-		{
-			$seriescount = (int)$row['count'];
-		}
 	?>	
 	<article class="story-heading">
 		<a href="/series/series/<?=$urlname;?>/<?=$curr_id;?>">
@@ -77,6 +71,7 @@ include 'page_fragments/main_head.php';?>
 		</section>
 	</article>
 	<?php endwhile;
+	$seriescount = database\count('series');
 	$prevurl = $page > 1 ? "/series/page/".($page-1) : NULL;
 	$nexturl = $seriescount > ($offset + 20) ? "/series/page/".($page+1) : NULL;
 

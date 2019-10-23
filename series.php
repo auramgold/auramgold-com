@@ -107,13 +107,8 @@ include 'page_fragments/main_head.php';?>
 		(
 			$storyquer
 		);
-		$storycount = 0;
 		while($row = $storyresu->fetch_assoc())
 		{
-			if($storycount == 0)
-			{
-				$storycount = (int)$row['count'];
-			}
 			$story_id = $row['story_id'];
 			
 			$tags = array();
@@ -134,6 +129,9 @@ include 'page_fragments/main_head.php';?>
 			
 			story\storybox($story_id, $row['title'], $row['name'], $row['author_id'], $row['description'], $row['modified_time'], $tags, $cws);
 		}
+		
+		$storycount = database\count('stories','`series_id` = '.$id);
+		
 		$encname = util\htmltourl($data['name']);
 		$prevurl = $page > 1 ? "/series/series/$encname/$id/page/".($page-1) : NULL;
 		$nexturl = $storycount > ($offset + 20) ? "/series/series/$encname/$id/page/".($page+1) : NULL;

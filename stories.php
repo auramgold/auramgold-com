@@ -35,17 +35,13 @@ include 'page_fragments/main_head.php';?>
 	);
 	$cwquer->bind_param('s', $story_id);	
 	
-	$storyquer = "SELECT `stories`.*, (`prev_id` IS NULL) AS notfirst, COUNT(`title`) AS count, `authors`.`name` FROM `stories`"
-			. " JOIN `authors` ON (`stories`.`author_id`=`authors`.`author_id`) WHERE 1"
-			. " ORDER BY notfirst DESC, `modified_time` DESC, `title` ASC LIMIT 20 OFFSET $offset";
+	$storyquer = "SELECT `stories`.*, (`prev_id` IS NULL) AS notfirst, `authors`.`name` FROM `stories`"
+			. " JOIN `authors` ON (`stories`.`author_id`=`authors`.`author_id`) WHERE `modified_time` != 0"
+			. " ORDER BY notfirst DESC, `modified_time` DESC, `title` ASC LIMIT 20 OFFSET 0";
 	$storyresu = database\inst()->query($storyquer);
-	$storycount = 0;
+	
 	while($row = $storyresu->fetch_assoc())
 	{
-		if($storycount == 0)
-		{
-			$storycount = (int)$row['count'];
-		}
 		$story_id = $row['story_id'];
 
 		$tags = array();
@@ -66,6 +62,8 @@ include 'page_fragments/main_head.php';?>
 
 		story\storybox($story_id, $row['title'], $row['name'], $row['author_id'], $row['description'], $row['modified_time'], $tags, $cws);
 	}
+	
+	$storycount = database\count('stories','`modified_time` != 0');
 	
 	$prevurl = $page > 1 ? "/stories/page/".($page-1) : NULL;
 	$nexturl = $storycount > ($offset + 20) ? "/stories/page/".($page+1) : NULL;

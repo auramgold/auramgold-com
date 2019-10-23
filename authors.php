@@ -23,12 +23,7 @@ include 'page_fragments/main_head.php';?>
 	$authorquer = "SELECT *, COUNT(`name`) AS count FROM `authors`"
 			. " WHERE 1 ORDER BY `name` ASC LIMIT 20 OFFSET $offset";
 	$authorresu = database\inst()->query($authorquer);
-	$authorcount = 0;
 	while($row = $authorresu->fetch_assoc()):
-		if($authorcount == 0)
-		{
-			$authorcount = (int)$row['count'];
-		}
 		$urlname = util\htmltourl($row['name']);
 	?>	
 	<article class='story-heading'>
@@ -43,6 +38,9 @@ include 'page_fragments/main_head.php';?>
 		</section>
 	</article>
 	<?php endwhile;
+	
+	$authorcount = database\count('authors');
+	
 	$prevurl = $page > 1 ? "/author/page/".($page-1) : NULL;
 	$nexturl = $authorcount > ($offset + 20) ? "/author/page/".($page+1) : NULL;
 
