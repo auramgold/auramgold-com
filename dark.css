@@ -7,7 +7,7 @@ a:not(.no-display):visited {
 }
 
 body {
-	color: white;
+	color: #f0f0f0;
 	background: linear-gradient(#333333 30%,#383838 50%, #444444 90%);
 	background-repeat: no-repeat;
 	background-color: #444444;
