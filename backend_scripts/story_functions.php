@@ -5,7 +5,7 @@ require_once 'util_functions.php';
 function iso8601(int $time): string
 {
 	date_default_timezone_set('UTC');
-	return date('Y-m-d\TH-i-s\Z', $time);
+	return date('Y-m-d\TH:i:s\Z', $time);
 }
 
 function storybox(string $id, string $title,string $aname,string $author_id, string $desc, int $timestamp, array $tags = null, array $cws = null)
