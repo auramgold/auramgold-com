@@ -88,7 +88,7 @@ include 'page_fragments/main_head.php';?>
 			story\storybox($story_id, $row['title'], $data['name'], $id, $row['description'], $row['modified_time'], $tags, $cws);
 		}
 		
-		$storycount = database\count('stories', '`author_id` = '.$id);
+		$storycount = database\count('stories', "`author_id` = '$id'");
 		
 		$encname = util\htmltourl($data['name']);
 		$prevurl = $page > 1 ? "/authors/author/$encname/$id/page/".($page-1) : NULL;

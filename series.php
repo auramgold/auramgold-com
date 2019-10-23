@@ -80,7 +80,7 @@ include 'page_fragments/main_head.php';?>
 				</section>
 			</section>
 		</header>
-		<h2>Stories by <?=$data['name'];?></h2>
+		<h2>Stories in <?=$data['name'];?></h2>
 		<!--This stuff is auto formatted by the backend, so if the indentation looks weird, that's why-->
 		<?php
 		$story_id = '';
@@ -130,7 +130,7 @@ include 'page_fragments/main_head.php';?>
 			story\storybox($story_id, $row['title'], $row['name'], $row['author_id'], $row['description'], $row['modified_time'], $tags, $cws);
 		}
 		
-		$storycount = database\count('stories','`series_id` = '.$id);
+		$storycount = database\count('stories',"`series_id` = '$id'");
 		
 		$encname = util\htmltourl($data['name']);
 		$prevurl = $page > 1 ? "/series/series/$encname/$id/page/".($page-1) : NULL;
