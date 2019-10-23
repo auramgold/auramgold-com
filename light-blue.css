@@ -1,0 +1,22 @@
+a:not(.no-display) {
+	color: #0066cc;
+}
+
+a:not(.no-display):visited {
+	color: #003366;
+}
+
+header#top{
+	background: linear-gradient(#66b3ff 35%,#8BC3FA 65%, #eeeeee);
+	color: black;
+}
+
+.nav-item{
+	background-color: #66b3ff;
+}
+
+@media (max-width:849px) {
+	header#top{
+		background: linear-gradient(#66b3ff 80%, #eeeeee);
+	}
+}

@@ -29,8 +29,10 @@ include 'page_fragments/main_head.php';?>
 		<form method='post'>
 			<label>Color Scheme:
 				<select name='style'>
-					<option value='light' <?=$style=='light'?'selected':''?>>Light Theme</option>
-					<option value='dark' <?=$style=='dark'?'selected':''?>>Dark Theme</option>
+					<option value='light' <?=$style=='light'?'selected':''?>>Light Gold</option>
+					<option value='dark' <?=$style=='dark'?'selected':''?>>Dark Gold</option>
+					<option value='light-blue' <?=$style=='light-blue'?'selected':''?>>Light Blue</option>
+					<option value='dark-blue' <?=$style=='dark-blue'?'selected':''?>>Dark Blue</option>
 				</select>
 			</label>
 			<button type='submit'>Change Settings</button>
