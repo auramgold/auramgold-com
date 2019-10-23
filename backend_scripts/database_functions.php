@@ -27,3 +27,10 @@ function &inst(): \mysqli
 	}
 	return $view_database_reference;
 }
+
+function count(string $table, string $conditions = '1'): int
+{
+	$query = "SELECT COUNT(*) AS count FROM $table WHERE $conditions";
+	$resp = inst()->query($query);
+	return (int)$resp->fetch_assoc()['count'] ?? 0;
+}
