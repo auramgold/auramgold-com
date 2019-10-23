@@ -7,7 +7,20 @@ if(!isset($PAGE_STYLES))
 {
 	$PAGE_STYLES = array();
 }
-$style = $_COOKIE['style'] ?? 'light';
+switch($_COOKIE['style'])
+{
+	case 'dark':
+		$style = 'dark';
+		break;
+	case 'dark-blue':
+		$style = 'dark-blue';
+		break;
+	case 'light-blue':
+		$style = 'light-blue';
+		break;
+	default:
+		$style = 'light';
+}
 if($style != 'light')
 {
 	$PAGE_STYLES[] = $style;
