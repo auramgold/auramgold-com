@@ -57,4 +57,10 @@ hr {
 	header#top{
 		background: linear-gradient(#66b3ff 80%, #333333);
 	}
+	
+	body {
+		background: linear-gradient(#333333 60%, #444444 90%);
+		background-repeat: no-repeat;
+		background-color: #444444;
+	}
 }

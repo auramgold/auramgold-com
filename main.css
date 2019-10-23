@@ -141,8 +141,10 @@ p {
 		width: 100%;
 		background: linear-gradient(#ffdd33 80%, #eeeeee);
 		height: 20em;
-		min-height: 225px;
+		max-height: 60vh;
+		flex-grow: 1;
 		justify-content: flex-start;
+		flex-direction: column;
 	}
 	
 	#toplogo {
@@ -151,12 +153,11 @@ p {
 	}
 	
 	#headerwrap {
-		flex-grow: 100;
 		margin: 0;
 		width: 100%;
 		flex-direction:column;
 		justify-content:flex-start;
-		height: 80%
+		height: 80%;
 	}
 	
 	header nav {
@@ -165,7 +166,7 @@ p {
 		justify-content: space-around;
 		align-items: flex-start;
 		
-		margin-bottom: 6%;
+		margin-bottom: 10%;
 	}
 	
 	.nav-item, .nav-item:hover{
@@ -178,5 +179,11 @@ p {
 		border-top: 1px solid black;
 		transition-duration: 0s;
 		transition:none;
+	}
+	
+	body {
+		background: linear-gradient(#eeeeee 60%, #ffffff 90%);
+		background-repeat: no-repeat;
+		background-color: #ffffff;
 	}
 }
