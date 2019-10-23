@@ -7,20 +7,19 @@ if(!isset($PAGE_STYLES))
 {
 	$PAGE_STYLES = array();
 }
-switch($_COOKIE['style'])
+require_once 'styles_list.php';
+if(isset($_COOKIE['style']))
 {
-	case 'dark':
-		$style = 'dark';
-		break;
-	case 'dark-blue':
-		$style = 'dark-blue';
-		break;
-	case 'light-blue':
-		$style = 'light-blue';
-		break;
-	default:
-		$style = 'light';
+	foreach($STYLES_LIST as $file => $name)
+	{
+		if($_COOKIE['style'] === $file)
+		{
+			$style = $file;
+			break;
+		}
+	}
 }
+$style = $style ?? 'light';
 if($style != 'light')
 {
 	$PAGE_STYLES[] = $style;
@@ -35,11 +34,11 @@ if($style != 'light')
 	<meta name="description" content="<?=$PAGE_DESCRIPTION??'An auramgold.com page.';?>"/>
 	<meta name="keywords" content="auramgold,lauren,website,accessibility,stories,<?=$PAGE_EXT_KEYWORDS??'';?>"/>
 	<link rel="shortcut icon" href="/favicon.ico?m=<?=filemtime('favicon.ico');?>" type="image/x-icon"/>
-	<link rel="stylesheet" type="text/css" href="/main.css?m=<?=filemtime('main.css');?>"/><?php
+	<link rel="stylesheet" type="text/css" href="/styles/main.css?m=<?=filemtime('styles/main.css');?>"/><?php
 	if(isset($PAGE_STYLES)):
 		foreach($PAGE_STYLES as $sheet):
 	?>
-	<link rel="stylesheet" type="text/css" href="/<?="$sheet.css?m=".filemtime($sheet.'.css');?>"><?php
+	<link rel="stylesheet" type="text/css" href="/styles/<?="$sheet.css?m=".filemtime('styles/'.$sheet.'.css');?>"><?php
 		endforeach;
 	endif;?>
 </head>
