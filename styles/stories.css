@@ -1,3 +1,9 @@
+hr.small {
+	border-style: dotted;
+	border-width: 2px;
+	width: 10em;
+}
+
 .story-heading {
 	display:flex;
 	flex-direction: column;
