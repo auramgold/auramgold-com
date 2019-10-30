@@ -63,4 +63,8 @@ hr {
 		background-repeat: no-repeat;
 		background-color: #444444;
 	}
+	
+	.nav-item, .nav-item:hover{
+		background-color: rgba(102, 179, 255, 0.4)
+	}
 }

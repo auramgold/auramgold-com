@@ -19,4 +19,8 @@ header#top{
 	header#top{
 		background: linear-gradient(#66b3ff 80%, #eeeeee);
 	}
+	
+	.nav-item, .nav-item:hover{
+		background-color: rgba(102, 179, 255, 0.4)
+	}
 }
