@@ -1,6 +1,6 @@
 <?php
 $PAGE_ID = "LICENSING";
-$PAGE_TITLE = "Licence Details";
+$PAGE_TITLE = "License Details";
 $PAGE_DESCRIPTION = "Licence details about the content on auramgold.com";
 include 'page_fragments/main_head.php';?>
 <body>
@@ -18,6 +18,15 @@ include 'page_fragments/main_head.php';?>
 			author pages. If no author is specified for something on this site, 
 			it may be assumed that it is authored by myself, and should be 
 			attributed to the name "Lauren (auramgold)".
+		</p>
+		
+		<p>
+			While this is not a legal requirement, if you do make a derivative work,
+			I'd love to be informed of it! I love hearing about ways my work has
+			helped others, and derivative works are some of the most obvious examples
+			of that, so if you do make something, it would be nice to shoot me a
+			twitter DM! It's not at all legally required, only the attribution is,
+			but I'd still love to hear about it!
 		</p>
 		
 		<p>
