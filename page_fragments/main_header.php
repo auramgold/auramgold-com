@@ -3,17 +3,26 @@ if(!isset($PAGE_ID))
 {
 	throw new Exception("Client page attempted to be loaded without ID");
 }
+$pages = [
+	'Main' => '/',
+	'Stories' => '/stories',
+	'Authors' => '/authors',
+	'Series' => '/series',
+	'Settings' => '/settings',
+	'Licensing' => '/licensing'
+];
 ?>
 	<header id="top">
 		<div id="headerwrap">
 			<div id="toplogo" class="handwriting">Auramgold</div>
 			<nav role="navigation">
-				<a class="nav-item no-display" href='/'>Main</a>
-				<a class="nav-item no-display" href="/stories">Stories</a>
-				<a class='nav-item no-display' href='/authors'>Authors</a>
-				<a class='nav-item no-display' href='/series'>Series</a>
-				<a class='nav-item no-display' href='/settings'>Settings</a>
-				<a class="nav-item no-display" href="/licensing">Licensing</a>
+			<ul id="header-nav-list" class='no-display'><?php
+			foreach($pages as $name => $address):?>
+				<li class='nav-item'>
+				<a class="no-display" href='<?=$address;?>'><?=$name;?></a>
+				</li><?php
+			endforeach; ?>
+			</ul>
 			</nav>
 		</div>
 	</header>

@@ -23,6 +23,16 @@ a.no-display {
 	color: inherit;
 }
 
+ul.no-display, ol.no-display {
+	padding-left: 0;
+	margin-right: 0;
+}
+
+ul.no-display > li, ol.no-display > li {
+	list-style-type: none;
+	display: block;
+}
+
 hr {
 	width: 100%;
 }
@@ -82,32 +92,53 @@ header nav {
 	display: flex;
 	height: 8vh;
 	min-height: 100px;
-	justify-content: space-around;
 	align-items: flex-start;
 	flex-grow: 1;
+}
+
+#header-nav-list {
+	margin-top: 0;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-grow: 1;
+	justify-content: space-around;
+	align-items: flex-start;
 }
 
 .nav-item {
 	font-weight: 700;
 	min-width: 6.5em;
 	display: block;
-	position: relative;
-	top: 0em;
 	text-align: center;
 	height: 80%;
-	cursor: pointer;
 	background: #ffdd33;
-	padding: 1em 1.5em 0.5em;
 	border-radius: 0 0 50% 50%;
-	transition: height, padding-top;
+	transition: height;
 	transition-duration: 0.5s;
 }
 
 .nav-item:hover {
-	transition: height, padding-top;
+	transition: height;
 	height: calc(80% + 1em);
-	padding-top: 2em;
 	transition-duration: 1s
+}
+
+.nav-item > a {
+	margin-top: 0;
+	padding: 1em 1.5em 0.5em;
+	display: block;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	transition: padding-top;
+	transition-duration: 0.5s;
+}
+
+.nav-item:hover > a {
+	transition: padding-top;
+	padding-top: 2em;
+	transition-duration: 1s;
 }
 
 main#body, article#body {
@@ -156,25 +187,33 @@ p {
 		margin: 0;
 		width: 100%;
 		flex-direction:column;
-		justify-content:flex-start;
+		justify-content: flex-start;
+		align-items: center;
 		height: 80%;
 	}
 	
 	header nav {
+		margin-top: 0;
+		padding-top: 0;
 		width: 100%;
 		flex-direction: column;
-		justify-content: space-around;
-		align-items: flex-start;
-		
+		justify-content:flex-start;
+		align-items: center;
 		margin-bottom: 10%;
+		flex-grow: 2;
+	}
+	
+	#header-nav-list {
+		width: 100%;
+		flex-direction: column;
 	}
 	
 	.nav-item, .nav-item:hover{
 		margin: 0;
 		width: 100%;
-		min-height: 1.1em;
+		min-height: 1.1rem;
 		flex-grow: 1;
-		padding: 0.05em;
+		padding-top: 0.05em;
 		border-radius: 0;
 		border-top: 1px solid black;
 		transition-duration: 0s;

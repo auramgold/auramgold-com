@@ -49,6 +49,10 @@ hr {
 	border: 2px solid white;
 }
 
+.story-footer {
+	border-top-color: white;
+}
+
 @media (max-width:849px) {
 	header#top{
 		background: linear-gradient(#ffdd33 80%, #333333);
