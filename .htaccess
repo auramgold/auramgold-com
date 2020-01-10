@@ -1,3 +1,5 @@
+ErrorDocument 404 https://www.auramgold.com/404
+
 DirectoryIndex index.php
 RewriteEngine on
 RewriteBase /
@@ -15,3 +17,6 @@ RewriteRule series/series/[^/]+/([A-Za-z0-9]+)/?$ series.php?id=$1&page=1 [L,QSA
 RewriteRule series/series/[^/]+/([A-Za-z0-9]+)/page/(\d+)/?$ series.php?id=$1&page=$2 [L,QSA]
 RewriteRule settings/?$ settings.php [L,QSA]
 RewriteRule licensing/?$ licensing.php [L,QSA]
+
+RewriteCond %{REQUEST_URI} ^/404/?$
+RewriteRule ^(.*)$ /errors/404.php [L]

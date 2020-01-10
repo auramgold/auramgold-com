@@ -33,12 +33,18 @@ if($style != 'light')
 	<meta name="author" content="Lauren (auramgold)"/>
 	<meta name="description" content="<?=$PAGE_DESCRIPTION??'An auramgold.com page.';?>"/>
 	<meta name="keywords" content="auramgold,lauren,website,accessibility,stories,<?=$PAGE_EXT_KEYWORDS??'';?>"/>
-	<link rel="shortcut icon" href="/favicon.ico?m=<?=filemtime('favicon.ico');?>" type="image/x-icon"/>
-	<link rel="stylesheet" type="text/css" href="/styles/main.css?m=<?=filemtime('styles/main.css');?>"/><?php
+
+	<meta name="twitter:card" content="summary"/>
+	<meta name="twitter:site" content="@laurenauramgold"/>
+	<meta name="twitter:title" content="<?=$PAGE_TITLE;?>"/>
+	<meta name="twitter:description" content="<?=$PAGE_DESCRIPTION;?>"/>
+	
+	<link rel="shortcut icon" href="/favicon.ico?m=<?=filemtime('/home/public/favicon.ico');?>" type="image/x-icon"/>
+	<link rel="stylesheet" type="text/css" href="/styles/main.css?m=<?=filemtime('/home/public/styles/main.css');?>"/><?php
 	if(isset($PAGE_STYLES)):
 		foreach($PAGE_STYLES as $sheet):
 	?>
-	<link rel="stylesheet" type="text/css" href="/styles/<?="$sheet.css?m=".filemtime('styles/'.$sheet.'.css');?>"><?php
+	<link rel="stylesheet" type="text/css" href="/styles/<?="$sheet.css?m=".filemtime("/home/public/styles/$sheet.css");?>"><?php
 		endforeach;
 	endif;?>
 </head>

@@ -19,7 +19,8 @@ if($allowable)
 }
 if(!$allowable)
 {
-	echo "<meta http-equiv=\"refresh\" content=\"0;URL='/stories'\" />";
+	header("HTTP/1.1 404 Not Found");
+	include 'errors/404.php';
 	die;
 }
 

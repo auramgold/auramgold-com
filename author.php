@@ -22,7 +22,9 @@ if($allowable)
 }
 if(!$allowable)
 {
-	echo "<meta http-equiv=\"refresh\" content=\"0;URL='/authors/'\" />";
+	header("HTTP/1.1 404 Not Found");
+	include 'errors/404.php';
+	die;
 }
 $PAGE_ID = "AUTHOR/$id";
 $PAGE_TITLE = $data['name'] . "'s stories";
