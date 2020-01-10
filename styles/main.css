@@ -118,12 +118,6 @@ header nav {
 	transition-duration: 0.5s;
 }
 
-.nav-item:hover {
-	transition: height;
-	height: calc(80% + 1em);
-	transition-duration: 1s
-}
-
 .nav-item > a {
 	margin-top: 0;
 	padding: 1em 1.5em 0.5em;
@@ -133,12 +127,6 @@ header nav {
 	cursor: pointer;
 	transition: padding-top;
 	transition-duration: 0.5s;
-}
-
-.nav-item:hover > a {
-	transition: padding-top;
-	padding-top: 2em;
-	transition-duration: 1s;
 }
 
 main#body, article#body {
@@ -166,12 +154,26 @@ p {
 	text-indent: 2em;
 }
 
+@media (min-width:850px) {
+	.nav-item:hover {
+		transition: height;
+		height: calc(80% + 1em);
+		transition-duration: 1s
+	}
+	
+	.nav-item:hover > a {
+		transition: padding-top;
+		padding-top: 2em;
+		transition-duration: 1s;
+	}
+}
+
 @media (max-width:849px) {
 	header#top{
 		margin:0;
 		width: 100%;
 		background: linear-gradient(#ffdd33 80%, #eeeeee);
-		height: 20em;
+		height: 15em;
 		max-height: 60vh;
 		flex-grow: 1;
 		justify-content: flex-start;
@@ -199,16 +201,17 @@ p {
 		flex-direction: column;
 		justify-content:flex-start;
 		align-items: center;
-		margin-bottom: 10%;
+		margin-bottom: 3vh;
 		flex-grow: 2;
 	}
 	
 	#header-nav-list {
 		width: 100%;
 		flex-direction: column;
+		flex-shrink: 0;
 	}
 	
-	.nav-item, .nav-item:hover{
+	.nav-item {
 		margin: 0;
 		width: 100%;
 		min-height: 1.1rem;
@@ -216,13 +219,20 @@ p {
 		padding-top: 0.05em;
 		border-radius: 0;
 		border-top: 1px solid black;
-		transition-duration: 0s;
-		transition:none;
+		transition: background-color 0.5s;
 		background-color: rgba(255, 221, 51, 0.4);
 	}
 	
+	.nav-item:hover {
+		background-color: rgba(255, 234, 128, 0.6);
+	}
+	
+	.nav-item > a {
+		padding: 0.05em 0;
+	}
+	
 	.nav-item:last-child {
-		border-radius: 0 0 25% 25%;
+		border-bottom: 1px solid black;
 	}
 	
 	body {
