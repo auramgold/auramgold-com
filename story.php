@@ -37,11 +37,36 @@ $tagquer->close();
 
 while($row = $tagresu->fetch_assoc())
 {
-	if(!$comma){$comma = true;}
-	else{		$tags .= ', ';}
+	if(!$tagcomma){$tagcomma = true;}
+	else{$tags .= ', ';}
 	$tags .= $row['name'];
 }
-if(!$comma){$tags = NULL;}
+if(!$tagcomma){$tags = NULL;}
+
+$cwquer = database\inst()->prepare('SELECT * '
+	. 'FROM `story_content_warnings` JOIN `content_warnings` '
+		. 'ON (`story_content_warnings`.`cw_id` = `content_warnings`.`cw_id`) '
+	. 'WHERE `story_content_warnings`.`story_id`=(?)');
+
+$cwquer->bind_param("s", $id);
+$cwquer->execute();
+$cwresu = $cwquer->get_result();
+$cwquer->close();
+$cwcomma = false;
+$cws = '';
+while($row = $cwresu->fetch_assoc())
+{
+	if(!$cwcomma)
+	{
+		$cwcomma = true;
+	}
+	else
+	{
+		$cws .= ', ';
+	}
+	$cws .= $row['name'];
+}
+if(!$cwcomma){$cws = NULL;}
 
 $authorresp = database\inst()->query("SELECT `name` FROM `authors` "
 		. "WHERE `author_id` = '{$data['author_id']}'");
@@ -49,7 +74,7 @@ $authordata = $authorresp->fetch_assoc();
 
 $PAGE_ID = "STORY/$id";
 $PAGE_TITLE = $data['title']." by $authordata[name]";
-$PAGE_DESCRIPTION = $data['description'];
+$PAGE_DESCRIPTION = $data['description'] . ($cwcomma ? " | CW: $cws" : '');
 $PAGE_STYLES = ['stories'];
 $PAGE_EXT_KEYWORDS = $tags??'';
 include 'page_fragments/main_head.php';?>
@@ -106,35 +131,13 @@ include 'page_fragments/main_head.php';?>
 			<section class='story-description'><?=$data['description'];?></section>
 			<section class='story-extra-info'>
 				<section>
-					Tags: <?=$tags??'None';?>
+					Tags: <?=$tagcomma? $tags : 'None';?>
 				</section>
 				<section>
 					Modified: <?= \story\iso8601((int)$data['modified_time']);?>
 				</section>
 				<section>
-					Content Warnings: <?php
-	$prepquer = database\inst()->prepare('SELECT * '
-			. 'FROM `story_content_warnings` JOIN `content_warnings` '
-				. 'ON (`story_content_warnings`.`cw_id` = `content_warnings`.`cw_id`) '
-			. 'WHERE `story_content_warnings`.`story_id`=?');
-	$prepquer->bind_param("s", $id);
-	$prepquer->execute();
-	$resu = $prepquer->get_result();
-	$comma = false;
-	while($row = $resu->fetch_assoc())
-	{
-		if(!$comma)
-		{
-			$comma = true;
-		}
-		else
-		{
-			echo ', ';
-		}
-		echo $row['name'];
-	}
-	if(!$comma){ echo 'None'; }
-					?>
+					Content Warnings: <?=$cwcomma ? $cws :'None'?>
 				</section>
 			</section>
 		</header>
