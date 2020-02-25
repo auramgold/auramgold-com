@@ -16,11 +16,13 @@ $pages = [
 		<div id="headerwrap">
 			<div id="toplogo" class="handwriting">Auramgold</div>
 			<nav role="navigation">
-			<ul id="header-nav-list" class='no-display'><?php
+			<ul id="header-nav-list" class='no-display'>
+<?php
 			foreach($pages as $name => $address):?>
 				<li class='nav-item'>
 				<a class="no-display" href='<?=$address;?>'><?=$name;?></a>
-				</li><?php
+				</li>
+<?php
 			endforeach; ?>
 			</ul>
 			</nav>
