@@ -1,23 +1,13 @@
 <?php
 require_once 'backend_scripts/database_functions.php';
 require_once 'backend_scripts/story_functions.php';
-$id = $_GET['id'] ?? NULL;
 $slug = $_GET['slug'] ?? NULL;
-$allowable = !is_null($id) || !is_null($slug);
+$allowable = !is_null($slug);
 if($allowable)
 {
-	if(!is_null($id))
-	{
-		$id = strtoupper($id);
-		$prepquer = database\inst()->prepare('SELECT * FROM `stories` WHERE `story_id`=?');
-		$prepquer->bind_param("s", $id);
-	}
-	else
-	{
-		$slug = strtolower($slug);
-		$prepquer = $prepquer = database\inst()->prepare('SELECT * FROM `stories` WHERE `slug`=?');
-		$prepquer->bind_param("s", $slug);
-	}
+	$slug = strtolower($slug);
+	$prepquer = $prepquer = database\inst()->prepare('SELECT * FROM `stories` WHERE `slug`=?');
+	$prepquer->bind_param("s", $slug);
 	$prepquer->execute();
 	$resu = $prepquer->get_result();
 	$data = $resu->fetch_assoc();
@@ -35,7 +25,6 @@ if(!$allowable)
 }
 
 $id = $data['story_id'];
-$slug = $data['slug'];
 
 $tagquer = database\inst()->prepare('SELECT * '
 	. 'FROM `story_tags` JOIN `tags` '
