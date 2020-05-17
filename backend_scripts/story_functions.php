@@ -8,7 +8,7 @@ function iso8601(int $time): string
 	return date('Y-m-d\TH:i:s\Z', $time);
 }
 
-function storybox(string $id, string $title,string $aname,string $author_id, string $desc, int $timestamp, array $tags = null, array $cws = null)
+function storybox(string $id, string $title,string $aname,string $author_id, $desc, int $timestamp, array $tags = null, array $cws = null)
 {
 	?>
 	<article class='story-heading'>
@@ -19,10 +19,14 @@ function storybox(string $id, string $title,string $aname,string $author_id, str
 			$urlname = \util\htmltourl($aname);
 		?>Written by <a href='/authors/author/<?=$urlname;?>/<?=$author_id?>/'><?=$aname?></a>
 	</section>
-	<section class='story-description'><?=$desc?></section>
+	<section class='story-description'><?=$desc??"None."?></section>
 	<section class='story-extra-info'>
 		<section>
 		Tags: <?php
+	foreach($tags as &$tag)
+	{
+		$tag = str_replace(' ', '&nbsp;', $tag);
+	}
 	if(!is_null($tags) && count($tags)>0)
 	{
 		echo implode(', ',$tags);
@@ -35,6 +39,10 @@ function storybox(string $id, string $title,string $aname,string $author_id, str
 	</section>
 	<section>
 					Content Warnings: <?php
+	foreach($cws as &$cw)
+	{
+		$cw = str_replace(' ', '&nbsp;', $cw);
+	}
 	if(!is_null($cws) && count($cws)>0)
 	{
 		echo implode(', ',$cws);
