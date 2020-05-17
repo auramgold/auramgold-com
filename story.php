@@ -164,6 +164,17 @@ include 'page_fragments/main_head.php';?>
 		 is licensed under a
 		 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 		</small>
+			<?php
+			if($data['author_id'] === 'T12WYUOFAVZOWCQJ'):
+			?>
+			<hr/>
+			<div>
+			If you enjoyed that story and want to support the author, you may
+			tip or commission her at her <a href="https://commiss.io/auramgold">commiss.io</a>.
+			</div>
+			<?php
+			endif;
+			?>
 		</footer>
 	</article>
 </body>
