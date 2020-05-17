@@ -4,6 +4,7 @@ DirectoryIndex index.php
 RewriteEngine on
 RewriteBase /
 
+RewriteRule writing/([^/]+?)/?$ story.php?slug=$1 [L,QSA]
 RewriteRule stories/?$ stories.php?page=1 [L,QSA]
 RewriteRule stories/page/(\d+)/?$ stories.php?page=$1 [L,QSA]
 RewriteRule stories/story/[^/]+/([A-Za-z0-9]+)?.*$ story.php?id=$1 [L,QSA]

@@ -8,12 +8,11 @@ function iso8601(int $time): string
 	return date('Y-m-d\TH:i:s\Z', $time);
 }
 
-function storybox(string $id, string $title,string $aname,string $author_id, $desc, int $timestamp, array $tags = null, array $cws = null)
+function storybox(string $slug, string $title,string $aname,string $author_id, $desc, int $timestamp, array $tags = null, array $cws = null)
 {
 	?>
 	<article class='story-heading'>
-		<?php $urltitle = \util\htmltourl($title);?>
-		<a href="/stories/story/<?="$urltitle/$id";?>" class="no-display"><section class="box-title"><h3 class='story-name'><?=$title?></h3></section></a>
+		<a href="/writing/<?=$slug;?>" class="no-display"><section class="box-title"><h3 class='story-name'><?=$title?></h3></section></a>
 	<section class='story-info'>
 		<?php
 			$urlname = \util\htmltourl($aname);

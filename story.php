@@ -2,12 +2,22 @@
 require_once 'backend_scripts/database_functions.php';
 require_once 'backend_scripts/story_functions.php';
 $id = $_GET['id'] ?? NULL;
-$allowable = !is_null($id);
+$slug = $_GET['slug'] ?? NULL;
+$allowable = !is_null($id) || !is_null($slug);
 if($allowable)
 {
-	$id = strtoupper($id);
-	$prepquer = database\inst()->prepare('SELECT * FROM `stories` WHERE `story_id`=?');
-	$prepquer->bind_param("s", $id);
+	if(!is_null($id))
+	{
+		$id = strtoupper($id);
+		$prepquer = database\inst()->prepare('SELECT * FROM `stories` WHERE `story_id`=?');
+		$prepquer->bind_param("s", $id);
+	}
+	else
+	{
+		$slug = strtolower($slug);
+		$prepquer = $prepquer = database\inst()->prepare('SELECT * FROM `stories` WHERE `slug`=?');
+		$prepquer->bind_param("s", $slug);
+	}
 	$prepquer->execute();
 	$resu = $prepquer->get_result();
 	$data = $resu->fetch_assoc();
@@ -23,6 +33,9 @@ if(!$allowable)
 	include 'errors/404.php';
 	die;
 }
+
+$id = $data['story_id'];
+$slug = $data['slug'];
 
 $tagquer = database\inst()->prepare('SELECT * '
 	. 'FROM `story_tags` JOIN `tags` '
@@ -97,17 +110,13 @@ include 'page_fragments/main_head.php';?>
 		{
 			$bound_id = $data['prev_id'];
 			$sequencequer->execute();
-			$prevname = $sequencequer->get_result()->fetch_assoc()['title'];
-			$prevurlname = util\htmltourl($prevname);
-			$prevurl = "/stories/story/$prevurlname/$bound_id";
+			$prevurl = '/writing/'.$sequencequer->get_result()->fetch_assoc()['slug'];
 		}
 		if(!is_null($data['next_id']))
 		{
 			$bound_id = $data['next_id'];
 			$sequencequer->execute();
-			$prevname = $sequencequer->get_result()->fetch_assoc()['title'];
-			$nexturlname = util\htmltourl($nextname);
-			$nexturl = "/stories/story/$nexturlname/$bound_id";
+			$nexturl = '/writing/'.$sequencequer->get_result()->fetch_assoc()['slug'];
 		}
 		
 		$seriesname = database\inst()->query("SELECT `name` FROM `series` WHERE `series_id` = '$data[series_id]'")->fetch_assoc()['name'];

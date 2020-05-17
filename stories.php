@@ -43,6 +43,7 @@ include 'page_fragments/main_head.php';?>
 	while($row = $storyresu->fetch_assoc())
 	{
 		$story_id = $row['story_id'];
+		$slug = $row['slug'];
 
 		$tags = array();
 		$tagquer->execute();
@@ -60,7 +61,7 @@ include 'page_fragments/main_head.php';?>
 			$cws[] = $cwrow['name'];
 		}
 
-		story\storybox($story_id, $row['title'], $row['name'], $row['author_id'], $row['description'], $row['modified_time'], $tags, $cws);
+		story\storybox($slug, $row['title'], $row['name'], $row['author_id'], $row['description'], $row['modified_time'], $tags, $cws);
 	}
 	
 	$storycount = database\count('stories','`modified_time` != 0');
