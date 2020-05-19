@@ -36,7 +36,7 @@ include 'page_fragments/main_head.php';?>
 	$cwquer->bind_param('s', $story_id);	
 	
 	$storyquer = "SELECT `stories`.*, (`prev_id` IS NULL) AS notfirst, `authors`.`name` FROM `stories`"
-			. " JOIN `authors` ON (`stories`.`author_id`=`authors`.`author_id`) WHERE `modified_time` != 0"
+			. " JOIN `authors` ON (`stories`.`author_id`=`authors`.`author_id`) WHERE `modified_time` != 0 AND `deleted` = 0"
 			. " ORDER BY notfirst DESC, `modified_time` DESC, `title` ASC LIMIT 20 OFFSET 0";
 	$storyresu = database\inst()->query($storyquer);
 	
