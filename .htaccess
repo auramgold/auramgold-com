@@ -4,6 +4,9 @@ DirectoryIndex index.php
 RewriteEngine on
 RewriteBase /
 
+# Redirects of .php links to no-extension URLs
+RewriteRule index.php https://www.auramgold.com/ [R=301]
+
 # This section is for deprecated non-slug URL redirects
 RewriteRule stories/story/[^/]+/KBA8LMQYHMZD2RPM https://www.auramgold.com/writing/reflectivity [R=301]
 RewriteRule stories/story/[^/]+/2G8DOKNF1LXP58PQ https://www.auramgold.com/writing/felidae [R=301]
