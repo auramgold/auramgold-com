@@ -16,17 +16,17 @@ include 'page_fragments/main_head.php';?>
 				Creative Commons Attribution-ShareAlike 4.0 International
 			</a>, with attribution to the relevant authors as specified in their 
 			author pages. If no author is specified for something on this site, 
-			it may be assumed that it is authored by myself, and should be 
-			attributed to the name "Lauren (auramgold)".
+			it may be assumed that it is authored by ourselves, and should be 
+			attributed to the name "fractal".
 		</p>
 		
 		<p>
 			While this is not a legal requirement, if you do make a derivative work,
-			I'd love to be informed of it! I love hearing about ways my work has
+			we'd love to be informed of it! We love hearing about ways our work has
 			helped others, and derivative works are some of the most obvious examples
-			of that, so if you do make something, it would be nice to shoot me a
+			of that, so if you do make something, it would be nice to shoot us a
 			twitter DM! It's not at all legally required, only the attribution is,
-			but I'd still love to hear about it!
+			but we'd still love to hear about it!
 		</p>
 		
 		<p>
@@ -39,7 +39,7 @@ include 'page_fragments/main_head.php';?>
 				Creative Commons Attribution 2.0 Generic
 			</a>
 			license. The very heavy modifications applied to it to stylize it for 
-			use as a favicon are entirely my own, and may be freely used with credit 
+			use as a favicon are entirely our own, and may be freely used with credit 
 			to the original creators.
 		</p>
 	</main>

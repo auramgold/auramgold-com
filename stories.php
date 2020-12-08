@@ -13,7 +13,7 @@ include 'page_fragments/main_head.php';?>
 	<?php include 'page_fragments/main_header.php';?>
 	<main id="body">
 		<h1 class="handwriting">Stories Index</h1>
-		<p>This is an automatically-generated index of the stories I host on
+		<p>This is an automatically-generated index of the stories we host on
 			 this site. A search bar will be added once there is more here such that
 			 a search function would be necessary.
 		</p>

@@ -9,11 +9,11 @@ include '/home/public/page_fragments/main_head.php';?>
 	<main id="body">
 		<h1 class="handwriting">404 Not Found Error</h1>
 		<p>
-			This page is shown when my server receives a link that it does not
+			This page is shown when our server receives a link that it does not
 			know how to properly handle. If you found this page through someone
 			linking to this site, tell them that their link is incorrect. If
 			you got to this page through a link somewhere else on the site,
-			please contact the me so that I may fix that.
+			please contact us so that we may fix that.
 		</p>
 		<img src="/decamark.png" alt=""/>
 		<p>

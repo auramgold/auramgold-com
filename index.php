@@ -8,23 +8,23 @@ include 'page_fragments/main_head.php';?>
 	<main id="body">
 		<h1 class="handwriting">Welcome to Auramgold!</h1>
 		<p>
-			This is my little place where I put my stories and other things that
+			This is our little place where I put our stories and other things that
 			 it is better to host online in a single place rather than sharing
 			 them as individual files.
 		</p>
 		
 		<p>
-			I've been a hobbyist web developer since I was about 10, and, through
-			 a <em>lot</em> of practice, I'm confident enough to call myself at
-			 least competent at web development! Hooray! My main focus of web dev
+			We've been a hobbyist web developer since we were about 10, and, through
+			 a <em>lot</em> of practice, we're confident enough to call ourselves at
+			 least competent at web development! Hooray! Our main focus of web dev
 			 is accessibility, a thing far too many others let fall to the wayside.
-			 Because of this, I do offer to help people with making their websites
-			 more accessible should they so desire, so please do contact me if you
+			 Because of this, We do offer to help people with making their websites
+			 more accessible should they so desire, so please do contact us if you
 			 are interested!
 		</p>
 		
 		<p>
-			I tend to limit my social media due to privacy concerns, however, I
+			We tend to limit my social media due to privacy concerns, however, we
 			 <em>do</em> have <a href='https://www.twitter.com/laurenauramgold'>
 			 a twitter account</a> if you wish to take a look at that, as well
 			 as a <a href='https://github.com/auramgold'>Github</a>, where 
