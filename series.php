@@ -9,7 +9,7 @@ $allowable = !is_null($id);
 if($allowable)
 {
 	$id = strtoupper($id);
-	$prepquer = database\inst()->prepare('SELECT * FROM `series` WHERE `series_id`=?');
+	$prepquer = database\inst()->prepare('SELECT * FROM `series` WHERE `deleted`=0 AND `series_id`=?');
 	$prepquer->bind_param("s", $id);
 	$prepquer->execute();
 	$resu = $prepquer->get_result();
@@ -103,7 +103,7 @@ include 'page_fragments/main_head.php';?>
 		$storyquer = "SELECT `stories`.*, (`prev_id` IS NULL) AS notfirst, COUNT(`title`) AS count,"
 				. " `authors`.`name` AS name FROM `stories`"
 				. " JOIN `authors` ON (`stories`.`author_id`=`authors`.`author_id`)"
-				. " WHERE `series_id` = '$id'"
+				. " WHERE `series_id` = '$id' AND `deleted`=0"
 				. " ORDER BY notfirst DESC, `modified_time` DESC LIMIT 20 OFFSET $offset";
 		$storyresu = database\inst()->query
 		(

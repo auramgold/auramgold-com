@@ -26,13 +26,14 @@ include 'page_fragments/main_head.php';?>
 		<h2>Listed Series</h2><?php
 	$parent_id = '';
 	$curr_id = '';
-	$parentquer = database\inst()->prepare('SELECT `name` FROM `series` WHERE `series_id`=?');
+	$parentquer = database\inst()->prepare('SELECT `name` FROM `series` WHERE `deleted`=0 AND `series_id`=?');
 	$parentquer->bind_param('s', $parent_id);
 		
 	$seriesquer = "SELECT *,(`parent_id` IS NULL) AS toplevel, COUNT(`name`) AS count FROM `series`"
-			. " WHERE 1 ORDER BY toplevel DESC, `name` ASC LIMIT 20 OFFSET $offset";
+			. " WHERE `deleted`=0 ORDER BY toplevel DESC, `name` ASC LIMIT 20 OFFSET $offset";
 	$seriesresu = database\inst()->query($seriesquer);
 	while($row = $seriesresu->fetch_assoc()):
+		print_r($row);
 		$curr_id = $row['series_id'];
 		$parent_id = $row['parent_id'];
 		$name = $row['name'];
