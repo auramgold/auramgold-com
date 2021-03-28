@@ -5,7 +5,7 @@ if(!isset($PAGE_ID))
 }
 $pages = [
 	'Main' => '/',
-	'Writing' => '/stories',
+	'Fiction' => '/stories',
 	//'Authors' => '/authors',
 	//'Series' => '/series',
 	'Settings' => '/settings',
