@@ -30,12 +30,11 @@ if($style != 'light')
 	<title><?=$PAGE_TITLE;?> - auramgold.com</title>
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-	<meta name="author" content="Lauren (auramgold)"/>
+	<meta name="author" content="fractal Starlight"/>
 	<meta name="description" content="<?=$PAGE_DESCRIPTION??'An auramgold.com page.';?>"/>
-	<meta name="keywords" content="auramgold,lauren,website,accessibility,stories,<?=$PAGE_EXT_KEYWORDS??'';?>"/>
-
+	<meta name="keywords" content="auramgold,lauren,fractal,website,accessibility,stories,<?=$PAGE_EXT_KEYWORDS??'';?>"/>
 	<meta name="twitter:card" content="summary"/>
-	<meta name="twitter:site" content="@laurenauramgold"/>
+	<meta name="twitter:site" content="@eeveeauramgold"/>
 	<meta name="twitter:title" content="<?=$PAGE_TITLE;?>"/>
 	<meta name="twitter:description" content="<?=$PAGE_DESCRIPTION;?>"/>
 	
