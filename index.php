@@ -6,9 +6,9 @@ include 'page_fragments/main_head.php';?>
 <body>
 	<?php include 'page_fragments/main_header.php';?>
 	<main id="body">
-		<h1 class="handwriting">Welcome to Auramgold!</h1>
+		<h1 class="handwriting">Welcome to auramgold!</h1>
 		<p>
-			This is our little place where I put our stories and other things that
+			This is our little place where we put our stories and other things that
 			 it is better to host online in a single place rather than sharing
 			 them as individual files.
 		</p>
@@ -18,7 +18,7 @@ include 'page_fragments/main_head.php';?>
 			 a <em>lot</em> of practice, we're confident enough to call ourselves at
 			 least competent at web development! Hooray! Our main focus of web dev
 			 is accessibility, a thing far too many others let fall to the wayside.
-			 Because of this, We do offer to help people with making their websites
+			 Because of this, we do offer to help people with making their websites
 			 more accessible should they so desire, so please do contact us if you
 			 are interested!
 		</p>
