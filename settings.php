@@ -15,7 +15,7 @@ include 'page_fragments/main_head.php';?>
 <body>
 	<?php include 'page_fragments/main_header.php';?>
 	<main id="body">
-		<h1>Settings</h1>
+		<h1 class="handwriting">Settings</h1>
 		<p>
 			This is where settings for this website are configured. Using any of
 			 these settings is optional, and they are stored in cookies when you
@@ -25,7 +25,6 @@ include 'page_fragments/main_head.php';?>
 			 settings, <strong>no information is stored
 			 server-side from this page</strong>.
 		</p>
-		<?=$foobar;?>
 		<form method='post'>
 			<label>Color Scheme:
 				<select name='style'>
