@@ -14,7 +14,7 @@ $pages = [
 ?>
 	<header id="top">
 		<div id="headerwrap">
-			<div id="toplogo" class="handwriting">Auramgold</div>
+			<div id="toplogo" class="handwriting">auramgold</div>
 			<div role="presentation" style="flex-grow:0.25;max-height:0"></div>
 			<nav role="navigation">
 			<ul id="header-nav-list" class='no-display'>
