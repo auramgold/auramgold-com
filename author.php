@@ -61,7 +61,8 @@ include 'page_fragments/main_head.php';?>
 		);
 		$cwquer->bind_param('s', $story_id);
 		
-		$storyquer = "SELECT *, (`prev_id` IS NULL) AS notfirst FROM `stories` WHERE `author_id` = '$id'"
+		$storyquer = "SELECT *, (`prev_id` IS NULL) AS notfirst FROM `stories`"
+				. " WHERE `author_id` = '$id' AND `modified_time` != 0 AND `deleted` = 0"
 				. " ORDER BY notfirst DESC, `modified_time` DESC LIMIT 20 OFFSET $offset";
 		$storyresu = database\inst()->query
 		(
