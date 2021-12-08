@@ -46,4 +46,5 @@ if($style != 'light')
 	<link rel="stylesheet" type="text/css" href="/styles/<?="$sheet.css?m=".filemtime("/home/public/styles/$sheet.css");?>"><?php
 		endforeach;
 	endif;?>
+
 </head>
