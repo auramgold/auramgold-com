@@ -4,12 +4,12 @@ if(!isset($PAGE_ID))
 	throw new Exception("Client page attempted to be loaded without ID");
 }
 $pages = [
-	'Main' => '/',
-	'Fiction' => '/stories',
-	//'Authors' => '/authors',
-	//'Series' => '/series',
-	'Settings' => '/settings',
-	'Licensing' => '/licensing'
+	'Main' => 'https://www.auramgold.com/',
+	'Fiction' => 'https://www.auramgold.com/stories',
+	//'Authors' => 'https://www.auramgold.com/authors',
+	//'Series' => 'https://www.auramgold.com/series',
+	'Settings' => 'https://www.auramgold.com/settings',
+	'Licensing' => 'https://www.auramgold.com/licensing'
 ];
 ?>
 	<header id="top">
