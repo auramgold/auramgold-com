@@ -24,7 +24,7 @@ include 'page_fragments/main_head.php';?>
 		</p>
 		
 		<p>
-			We tend to limit my social media due to privacy concerns, however, we
+			We tend to limit our social media due to privacy concerns, however, we
 			 <em>do</em> have <a href='https://www.twitter.com/eeveeauramgold'>
 			 a twitter account</a> if you wish to take a look at that, as well
 			 as a <a href='https://github.com/auramgold'>Github</a>, where 
