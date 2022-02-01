@@ -22,6 +22,10 @@ header#top{
 	border: 2px solid white;
 }
 
+article {
+	background: #333333;
+}
+
 section.story-extra-info > section:not(:first-child) {
 	border-color: white;
 }

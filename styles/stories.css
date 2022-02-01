@@ -29,12 +29,11 @@ header#main-story-heading {
 
 section.box-title {
 	margin-top:0;
-	padding-top: 0.25rem;
+	padding: 0.5rem 0;
 	text-align: center;
 	display:block;
 	width:100%;
-	margin-bottom: 0.25em;
-	padding-bottom: 0.25em;
+	margin-bottom: 0.25rem;
 }
 
 section.box-title > h1,h2,h3 {
@@ -47,7 +46,7 @@ section.box-title > h1,h2,h3 {
 
 section.story-description {
 	flex-grow: 1;
-	padding: 0.25em;
+	padding: 0.5rem 0.25rem;
 	text-align: center;
 	width:100%;
 	display: block;
@@ -55,7 +54,7 @@ section.story-description {
 
 section.story-info {
 	flex-grow: 1;
-	padding: 0.25em;
+	padding: 0.5rem 0.25rem;
 	text-align: center;
 	width:100%;
 	display: block;
@@ -70,7 +69,7 @@ section.story-extra-info {
 section.story-extra-info > section {
 	flex-grow: 1;
 	flex-shrink: 1;
-	padding: 4px;
+	padding: 0.5rem 4px;
 	text-align: center;
 }
 

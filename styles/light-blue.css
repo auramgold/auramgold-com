@@ -7,12 +7,22 @@ a:not(.no-display):visited {
 }
 
 header#top{
-	background: linear-gradient(#66b3ff 35%,#8BC3FA 65%, #eeeeee);
+	background: linear-gradient(#66b3ff 35%,#8bc3fa 65%, #eeeeee);
 	color: black;
 }
 
 .nav-item{
 	background-color: #66b3ff;
+}
+
+article {
+	background: #f8f8ff;
+}
+
+@media (min-width:850px) {
+	.nav-item {
+		border: 1px solid #335a80;
+	}
 }
 
 @media (max-width:849px) {

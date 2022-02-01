@@ -26,6 +26,10 @@ header#top{
 	border: 2px solid white;
 }
 
+article {
+	background: #333333;
+}
+
 section.story-extra-info > section:not(:first-child) {
 	border-color: white;
 }
@@ -55,6 +59,12 @@ hr {
 
 .story-footer {
 	border-top-color: white;
+}
+
+@media (min-width:850px) {
+	.nav-item {
+		border: 1px solid #335a80;
+	}
 }
 
 @media (max-width:849px) {

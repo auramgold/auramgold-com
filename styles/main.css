@@ -129,6 +129,10 @@ header nav {
 	transition-duration: 0.5s;
 }
 
+article {
+	background: #fffff8;
+}
+
 main#body, article#body {
 	display: flex;
 	flex-direction: column;
@@ -156,7 +160,7 @@ p {
 
 @media (min-width:850px) {
 	.nav-item {
-		border: 1px solid #776508;
+		border: 1px solid #806f1a;
 	}
 	
 	.nav-item:hover {
