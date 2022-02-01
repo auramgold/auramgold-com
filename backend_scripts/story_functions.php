@@ -8,15 +8,21 @@ function iso8601(int $time): string
 	return date('Y-m-d\TH:i:s\Z', $time);
 }
 
+function dateformat(int $time): string
+{
+	date_default_timezone_set('UTC');
+	return date('Y-m-d @ H:i \U\T\C', $time);
+}
+
 function storybox(string $slug, string $title,string $aname,string $author_id, $desc, int $timestamp, array $tags = null, array $cws = null)
 {
 	?>
 	<article class='story-heading'>
-		<a href="/writing/<?=$slug;?>" class="no-display"><section class="box-title"><h3 class='story-name'><?=$title?></h3></section></a>
+		<a href="https://www.auramgold.com/writing/<?=$slug;?>" class="no-display"><section class="box-title"><h3 class='story-name'><?=$title?></h3></section></a>
 	<section class='story-info'>
 		<?php
 			$urlname = \util\htmltourl($aname);
-		?>Written by <a href='/authors/author/<?=$urlname;?>/<?=$author_id?>/'><?=$aname?></a>
+		?>Written by <a href='https://www.auramgold.com/authors/author/<?=$urlname;?>/<?=$author_id?>/'><?=$aname?></a>
 	</section>
 	<section class='story-description'><?=$desc??"None."?></section>
 	<section class='story-extra-info'>
@@ -34,7 +40,7 @@ function storybox(string $slug, string $title,string $aname,string $author_id, $
 					?>
 	</section>
 	<section>
-		Modified: <?= \story\iso8601((int)$timestamp);?>
+		Modified: <time datetime="<?=\story\iso8601((int)$timestamp);?>"><?= \story\dateformat((int)$timestamp);?></time>
 	</section>
 	<section>
 					Content Warnings: <?php
