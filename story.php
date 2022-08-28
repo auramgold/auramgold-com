@@ -19,7 +19,6 @@ if($allowable)
 }
 if(!$allowable)
 {
-	header("HTTP/1.1 404 Not Found");
 	include 'errors/404.php';
 	die;
 }
