@@ -21,9 +21,22 @@ function &inst(): \mysqli
 	global $view_database_reference;
 	if(is_null($view_database_reference))
 	{
+		$attempts = 0;
+		$errno = 0;
 		$credentials = explode(',',file_get_contents('database_credentials.txt',true));
-		$view_database_reference = new \mysqli("auramgold.db", $credentials[0],
-		$credentials[1], "auramgold_stories");
+		
+		do
+		{
+			$view_database_reference = new \mysqli("auramgold.db", $credentials[0],
+				$credentials[1], "auramgold_stories");
+			$errno = $view_database_reference->errno;
+			$attempts++;
+			if($attempts > 10)
+			{
+				include '../errors/500.php';
+				die;
+			}
+		} while ($errno != 0);
 	}
 	return $view_database_reference;
 }
@@ -34,3 +47,5 @@ function count(string $table, string $conditions = '1'): int
 	$resp = inst()->query($query);
 	return (int)$resp->fetch_assoc()['count'] ?? 0;
 }
+
+inst();
