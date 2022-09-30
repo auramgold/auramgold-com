@@ -20,9 +20,7 @@ function storybox(string $slug, string $title,string $aname,string $author_id, $
 	<article class='story-heading'>
 		<a href="https://www.auramgold.com/writing/<?=$slug;?>" class="no-display"><section class="box-title"><h3 class='story-name'><?=$title?></h3></section></a>
 	<section class='story-info'>
-		<?php
-			$urlname = \util\htmltourl($aname);
-		?>Written by <a href='https://www.auramgold.com/authors/author/<?=$urlname;?>/<?=$author_id?>/'><?=$aname?></a>
+		Written by <?=$aname?>
 	</section>
 	<section class='story-description'><?=$desc??"None."?></section>
 	<section class='story-extra-info'>

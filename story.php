@@ -123,7 +123,7 @@ include 'page_fragments/main_head.php';?>
 			<section class='story-info'>
 				<?php
 					$urlname = urlencode(htmlspecialchars_decode($authordata['name']));
-				?>Written by <a href='https://www.auramgold.com/authors/author/<?=$urlname;?>/<?=$data['author_id'];?>/'><?=$authordata['name'];?></a>
+				?>Written by <?=$authordata['name'];?>
 			</section>
 			<section class='story-description'><?=$data['description'];?></section>
 			<section class='story-extra-info'>
