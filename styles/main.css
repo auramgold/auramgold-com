@@ -41,6 +41,13 @@ label {
 	display: block;
 }
 
+.subtitle {
+	font-size: 0.65em;
+	font-weight:normal;
+	font-style: italic;
+	margin-top: 0.2em;
+}
+
 body {
 	width: 100%;
 	line-height: 1.5em;
@@ -108,7 +115,7 @@ header nav {
 
 .nav-item {
 	font-weight: 700;
-	min-width: 6.5em;
+	min-width: 7em;
 	display: block;
 	text-align: center;
 	height: 80%;

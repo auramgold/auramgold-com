@@ -6,10 +6,11 @@ if(!isset($PAGE_ID))
 $pages = [
 	'Main' => 'https://www.auramgold.com/',
 	'Fiction' => 'https://www.auramgold.com/stories',
+	'Nonfiction' => 'https://www.auramgold.com/nonfiction',
 	//'Authors' => 'https://www.auramgold.com/authors',
 	//'Series' => 'https://www.auramgold.com/series',
 	'Settings' => 'https://www.auramgold.com/settings',
-	'Licensing' => 'https://www.auramgold.com/licensing'
+	'Licensing' => 'https://www.auramgold.com/licensing',
 ];
 ?>
 	<header id="top">

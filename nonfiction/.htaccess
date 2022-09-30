@@ -1,0 +1,17 @@
+ErrorDocument 404 https://www.auramgold.com/404
+
+DirectoryIndex index.php
+RewriteEngine on
+RewriteBase /nonfiction/
+
+# Redirects of .php links to no-extension URLs
+#RewriteRule index.php https://www.auramgold.com/nonfiction [R=301]
+
+# Making readable URLs without .php
+
+# Redirect external .php requests to extensionless URL
+RewriteCond %{THE_REQUEST} ^(.+)\.php([#?][^\ ]*)?\ HTTP/
+RewriteRule ^(.+)\.php$ https://www.auramgold.com/nonfiction/$1 [R=301,L]
+
+# Resolve .php file for extensionless PHP URLs
+RewriteRule ^([^/.]+)$ $1.php [L]
